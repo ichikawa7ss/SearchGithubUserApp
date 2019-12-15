@@ -81,7 +81,11 @@ extension SearchUserViewController: SearchUserPresenterOutput {
         self.tableView.reloadData()
     }
     
-    func transitionToDetailWebView(url: URL) {
-        print("webViewを起動")
+    func transitionToDetailWebView(user: User) {
+        let storyboard = self.storyboard!
+        let detailWebVC = storyboard.instantiateViewController(withIdentifier: "detailWebVC") as! DetailWebViewController
+        detailWebVC.title = user.login
+        detailWebVC.url = user.htmlUrl
+        navigationController?.pushViewController(detailWebVC, animated: true)
     }
 }

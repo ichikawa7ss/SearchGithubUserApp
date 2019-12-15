@@ -19,7 +19,7 @@ protocol SearchUserPresenterInput {
 /// プレゼンターからの処理を委譲するプロトコル
 protocol SearchUserPresenterOutput: AnyObject {
     func updateUsers(_ users: [User])
-    func transitionToDetailWebView(url: URL)
+    func transitionToDetailWebView(user: User)
 }
 
 class SearchUserPresenter: SearchUserPresenterInput {
@@ -45,8 +45,7 @@ class SearchUserPresenter: SearchUserPresenterInput {
     }
     
     func didSelectRow(at index: Int) {
-        let url = users[index].htmlUrl
-        view.transitionToDetailWebView(url: url)
+        view.transitionToDetailWebView(user: users[index])
     }
     
     func didTapSearchButton(text: String?) throws {
