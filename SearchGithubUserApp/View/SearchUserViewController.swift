@@ -14,6 +14,7 @@ class SearchUserViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     
     public var test: String?
+    private var users: [User]?
 
     func inject(test: String) {
         self.test = test
@@ -23,10 +24,26 @@ class SearchUserViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let apiClient = GithubAPIClient()
+        let request = SearchUserRequest(keyword: "ichikawa")
+        print(request.buildUrl())
+
+        apiClient.send(request: request) { (result) in
+            switch result {
+            case .success(let response):
+                self.users = response.users
+            case .failure( _): break
+                // TODO: Error Handling
+            }
+            self.tableView.reloadData()
+        }
+        
         setup()
     }
     
     private func setup() {
+        searchBar.delegate = self
+        
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -43,15 +60,25 @@ extension SearchUserViewController: UITableViewDelegate {
 
 extension SearchUserViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        if let users = self.users {
+            return users.count
+        } else {
+            return 10
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell") as! UserTableViewCell
+        if let user = self.users?[indexPath.row] {
+            cell.configure(user: user)
+        }
         return cell
     }
 }
 
 extension SearchUserViewController: UISearchBarDelegate {
-    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        print("tap")
+        self.tableView.reloadData()
+    }
 }

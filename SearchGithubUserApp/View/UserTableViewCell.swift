@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 class UserTableViewCell: UITableViewCell {
 
@@ -16,14 +17,14 @@ class UserTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
-        accountImageView.image = UIImage(systemName: "photo")
-        userNameLabel.text = "ichikawa7ss"
-        accontTypeLabel.text = "User"
     }
     
     func configure(user: User) {
         // TODO 画像・ラベルの設定
+        let placeholderImage = UIImage(systemName: "photo")
+        self.accountImageView.af_setImage(withURL: user.avatarUrl, placeholderImage: placeholderImage)
+        self.userNameLabel.text = user.login
+        self.accontTypeLabel.text = user.type
     }
 
 }
