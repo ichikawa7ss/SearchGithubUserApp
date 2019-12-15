@@ -13,30 +13,16 @@ class SearchUserViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     @IBOutlet weak var tableView: UITableView!
     
-    public var test: String?
     private var users: [User]?
+    
+    private var presenter: SearchUserPresenterInput!
 
-    func inject(test: String) {
-        self.test = test
-        print("inject text: \(String(describing: self.test))")
+    func inject(presenter: SearchUserPresenterInput) {
+        self.presenter = presenter
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        let apiClient = GithubAPIClient()
-        let request = SearchUserRequest(keyword: "ichikawa")
-        print(request.buildUrl())
-
-        apiClient.send(request: request) { (result) in
-            switch result {
-            case .success(let response):
-                self.users = response.users
-            case .failure( _): break
-                // TODO: Error Handling
-            }
-            self.tableView.reloadData()
-        }
         
         setup()
     }
@@ -55,21 +41,24 @@ class SearchUserViewController: UIViewController {
 }
 
 extension SearchUserViewController: UITableViewDelegate {
-    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter.didSelectRow(at: indexPath.row)
+    }
 }
 
 extension SearchUserViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if let users = self.users {
-            return users.count
-        } else {
-            return 10
-        }
+        return presenter.numberOfUsers
+//        if let users = self.users {
+//            return users.count
+//        } else {
+//            return 10
+//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "UserTableViewCell") as! UserTableViewCell
-        if let user = self.users?[indexPath.row] {
+        if let user = presenter.user(forItem: indexPath.row) {
             cell.configure(user: user)
         }
         return cell
@@ -78,7 +67,21 @@ extension SearchUserViewController: UITableViewDataSource {
 
 extension SearchUserViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
-        print("tap")
+        do {
+            try presenter.didTapSearchButton(text: searchBar.text)
+        } catch let error {
+            // TODO エラーハンドリング
+            print(error)
+        }
+    }
+}
+
+extension SearchUserViewController: SearchUserPresenterOutput {
+    func updateUsers(_ users: [User]) {
         self.tableView.reloadData()
+    }
+    
+    func transitionToDetailWebView(url: URL) {
+        print("webViewを起動")
     }
 }
