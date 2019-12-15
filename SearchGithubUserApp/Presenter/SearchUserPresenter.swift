@@ -26,9 +26,11 @@ class SearchUserPresenter: SearchUserPresenterInput {
     
     // viewは処理を委譲する
     private weak var view: SearchUserPresenterOutput!
+    private var model: SearchUserModelInput
     
-    init(view: SearchUserPresenterOutput) {
+    init(view: SearchUserPresenterOutput, model: SearchUserModelInput) {
         self.view = view
+        self.model = model
     }
 
     // 画像はプレゼンタークラス内からのみ変更可能
@@ -48,18 +50,19 @@ class SearchUserPresenter: SearchUserPresenterInput {
     }
     
     func didTapSearchButton(text: String?) throws {
-        let apiClient = GithubAPIClient()
-        let request = SearchUserRequest(keyword: "ichikawa")
-        print(request.buildUrl())
+        let request = SearchUserRequest(keyword: text!)
 
-        apiClient.send(request: request) { (result) in
+        // モデルに画像取得処理を依頼
+        model.fetchUsers(request: request, completion: { result in
             switch result {
             case .success(let response):
                 self.users = response.users
-                self.view.updateUsers(self.users)
+                DispatchQueue.main.async {
+                    self.view.updateUsers(self.users)
+                }
             case .failure( _): break
                 // TODO: Error Handling
             }
-        }
+        })
     }
 }
