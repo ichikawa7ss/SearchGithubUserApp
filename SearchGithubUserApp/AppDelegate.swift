@@ -17,7 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let viewController = storyboard.instantiateInitialViewController() as! ViewController
+        let viewController = storyboard.instantiateInitialViewController() as! SearchUserViewController
         let navigationViewController = UINavigationController(rootViewController: viewController)
 
         viewController.inject(test: "テスト")

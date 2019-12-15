@@ -19,6 +19,9 @@
 		CC7413F523A67D32005D540C /* SearchUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413F423A67D32005D540C /* SearchUserRequest.swift */; };
 		CC7413F723A68635005D540C /* GithubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413F623A68635005D540C /* GithubAPIClient.swift */; };
 		CC7413F923A68861005D540C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413F823A68861005D540C /* Result.swift */; };
+		CC7413FC23A691C6005D540C /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413FB23A691C6005D540C /* SearchUserViewController.swift */; };
+		CC74140123A69412005D540C /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413FF23A69412005D540C /* UserTableViewCell.swift */; };
+		CC74140223A69412005D540C /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC74140023A69412005D540C /* UserTableViewCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +41,9 @@
 		CC7413F423A67D32005D540C /* SearchUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserRequest.swift; sourceTree = "<group>"; };
 		CC7413F623A68635005D540C /* GithubAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIClient.swift; sourceTree = "<group>"; };
 		CC7413F823A68861005D540C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
+		CC7413FB23A691C6005D540C /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
+		CC7413FF23A69412005D540C /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		CC74140023A69412005D540C /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -90,6 +96,7 @@
 		CC7413DA23A671DB005D540C /* SearchGithubUserApp */ = {
 			isa = PBXGroup;
 			children = (
+				CC7413FA23A69162005D540C /* View */,
 				CC7413EF23A6747B005D540C /* GithubAPI */,
 				CC7413DB23A671DB005D540C /* AppDelegate.swift */,
 				CC7413DD23A671DB005D540C /* SceneDelegate.swift */,
@@ -112,6 +119,16 @@
 				CC7413F823A68861005D540C /* Result.swift */,
 			);
 			path = GithubAPI;
+			sourceTree = "<group>";
+		};
+		CC7413FA23A69162005D540C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				CC7413FB23A691C6005D540C /* SearchUserViewController.swift */,
+				CC7413FF23A69412005D540C /* UserTableViewCell.swift */,
+				CC74140023A69412005D540C /* UserTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -174,6 +191,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CC74140223A69412005D540C /* UserTableViewCell.xib in Resources */,
 				CC7413E823A671E0005D540C /* LaunchScreen.storyboard in Resources */,
 				CC7413E523A671E0005D540C /* Assets.xcassets in Resources */,
 				CC7413E323A671DB005D540C /* Main.storyboard in Resources */,
@@ -230,8 +248,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC7413F123A67492005D540C /* User.swift in Sources */,
+				CC7413FC23A691C6005D540C /* SearchUserViewController.swift in Sources */,
 				CC7413F723A68635005D540C /* GithubAPIClient.swift in Sources */,
 				CC7413E023A671DB005D540C /* ViewController.swift in Sources */,
+				CC74140123A69412005D540C /* UserTableViewCell.swift in Sources */,
 				CC7413F523A67D32005D540C /* SearchUserRequest.swift in Sources */,
 				CC7413DC23A671DB005D540C /* AppDelegate.swift in Sources */,
 				CC7413DE23A671DB005D540C /* SceneDelegate.swift in Sources */,
