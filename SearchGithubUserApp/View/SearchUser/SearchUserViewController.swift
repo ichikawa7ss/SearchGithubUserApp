@@ -72,6 +72,16 @@ extension SearchUserViewController: UISearchBarDelegate {
 }
 
 extension SearchUserViewController: SearchUserPresenterOutput {
+    func showErrorAlert(title: String) {
+        let alert: UIAlertController = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.alert)
+        let reserve: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            (action: UIAlertAction!) -> Void in
+            return
+        })
+        alert.addAction(reserve)
+        self.present(alert, animated: true, completion: nil)
+    }
+    
     func updateUsers(_ users: [User]) {
         self.tableView.reloadData()
     }

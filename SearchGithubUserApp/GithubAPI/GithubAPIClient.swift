@@ -13,7 +13,7 @@ class GithubAPIClient {
     
     func send<Request: GithubRequest>(
         request: Request,
-        completion: @escaping (Result<Request.Response, Error>) -> ()) {
+        completion: @escaping (Result<Request.Response, SearchError>) -> ()) {
         
         let url = request.buildUrl()
         
@@ -26,14 +26,12 @@ class GithubAPIClient {
                     let response = try request.response(from: response.data!)
                     // 呼び出し元の処理を実行
                     completion(Result(value: response))
-                } catch let error {
-                        // 不正なレスポンス
-                        print(error)
+                } catch _ {
+                    // 不正なレスポンス
+                    completion(Result(error: .responseParseError))
                 }
-            case .failure(let error):
-                // 通信に関する失敗
-                // alamofireから吐かれたエラー
-                print(error)
+            case .failure(_):
+                completion(Result(error: .connectionError))
             }
         }
     }
