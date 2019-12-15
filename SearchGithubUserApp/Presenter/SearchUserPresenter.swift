@@ -18,7 +18,7 @@ protocol SearchUserPresenterInput {
 
 /// プレゼンターからの処理を委譲するプロトコル
 protocol SearchUserPresenterOutput: AnyObject {
-    func updateUsers(_ users: [User])
+    func updateUsers(users: [User])
     func showErrorAlert(title: String)
     func transitionToDetailWebView(user: User)
 }
@@ -59,10 +59,11 @@ class SearchUserPresenter: SearchUserPresenterInput {
                 // 取得成功
                 self.users = response.users
                 DispatchQueue.main.async {
-                    self.view.updateUsers(self.users)
+                    self.view.updateUsers(users: self.users)
                 }
             case .failure(let error):
-                // 取得失敗
+
+                    // 取得失敗
                 // エラー内容により表示文を変更
                 switch error {
                 case .connectionError:

@@ -65,7 +65,6 @@ extension SearchUserViewController: UISearchBarDelegate {
         do {
             try presenter.didTapSearchButton(text: searchBar.text)
         } catch let error {
-            // TODO エラーハンドリング
             print(error)
         }
     }
@@ -73,17 +72,16 @@ extension SearchUserViewController: UISearchBarDelegate {
 
 extension SearchUserViewController: SearchUserPresenterOutput {
     func showErrorAlert(title: String) {
-        let alert: UIAlertController = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.alert)
-        let reserve: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
-            (action: UIAlertAction!) -> Void in
-            return
-        })
-        alert.addAction(reserve)
-        self.present(alert, animated: true, completion: nil)
+        self.showOkAlert(title: title)
     }
     
-    func updateUsers(_ users: [User]) {
-        self.tableView.reloadData()
+    func updateUsers(users: [User]) {
+        if users.count == 0 {
+            // ユーザがいなければアラートを表示
+            self.showOkAlert(title: "該当するユーザーはいません")
+        } else {
+            self.tableView.reloadData()
+        }
     }
     
     func transitionToDetailWebView(user: User) {
@@ -92,5 +90,17 @@ extension SearchUserViewController: SearchUserPresenterOutput {
         detailWebVC.title = user.login
         detailWebVC.url = user.htmlUrl
         navigationController?.pushViewController(detailWebVC, animated: true)
+    }
+}
+
+extension UIViewController {
+    func showOkAlert(title: String) {
+        let alert: UIAlertController = UIAlertController(title: title, message: nil, preferredStyle: UIAlertController.Style.alert)
+        let reserve: UIAlertAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler:{
+            (action: UIAlertAction!) -> Void in
+            return
+        })
+        alert.addAction(reserve)
+        self.present(alert, animated: true, completion: nil)
     }
 }
