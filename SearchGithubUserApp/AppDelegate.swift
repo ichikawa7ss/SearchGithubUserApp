@@ -21,7 +21,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let navigationViewController = UINavigationController(rootViewController: viewController)
         viewController.title = "Search User"
 
-        let presenter = SearchUserPresenter(view: viewController)
+        let model = SearchUserModel()
+        let presenter = SearchUserPresenter(view: viewController, model: model)
         
         viewController.inject(presenter: presenter)
 
