@@ -22,6 +22,7 @@
 		CC7413FC23A691C6005D540C /* SearchUserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413FB23A691C6005D540C /* SearchUserViewController.swift */; };
 		CC74140123A69412005D540C /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413FF23A69412005D540C /* UserTableViewCell.swift */; };
 		CC74140223A69412005D540C /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC74140023A69412005D540C /* UserTableViewCell.xib */; };
+		CC74140523A6AF31005D540C /* SearchUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74140423A6AF31005D540C /* SearchUserPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -44,6 +45,7 @@
 		CC7413FB23A691C6005D540C /* SearchUserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserViewController.swift; sourceTree = "<group>"; };
 		CC7413FF23A69412005D540C /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 		CC74140023A69412005D540C /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
+		CC74140423A6AF31005D540C /* SearchUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserPresenter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 		CC7413DA23A671DB005D540C /* SearchGithubUserApp */ = {
 			isa = PBXGroup;
 			children = (
+				CC74140323A6AEFE005D540C /* Presenter */,
 				CC7413FA23A69162005D540C /* View */,
 				CC7413EF23A6747B005D540C /* GithubAPI */,
 				CC7413DB23A671DB005D540C /* AppDelegate.swift */,
@@ -129,6 +132,14 @@
 				CC74140023A69412005D540C /* UserTableViewCell.xib */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		CC74140323A6AEFE005D540C /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				CC74140423A6AF31005D540C /* SearchUserPresenter.swift */,
+			);
+			path = Presenter;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +260,7 @@
 			files = (
 				CC7413F123A67492005D540C /* User.swift in Sources */,
 				CC7413FC23A691C6005D540C /* SearchUserViewController.swift in Sources */,
+				CC74140523A6AF31005D540C /* SearchUserPresenter.swift in Sources */,
 				CC7413F723A68635005D540C /* GithubAPIClient.swift in Sources */,
 				CC7413E023A671DB005D540C /* ViewController.swift in Sources */,
 				CC74140123A69412005D540C /* UserTableViewCell.swift in Sources */,
