@@ -10,6 +10,7 @@ import Foundation
 
 struct User: Codable {
     let id: Int
+    let login: String
     let avatarUrlStr: String
     var avatarUrl: URL {
         return URL(string: avatarUrlStr)!
@@ -24,6 +25,7 @@ struct User: Codable {
     
     enum CodingKeys: String, CodingKey {
         case id
+        case login
         case avatarUrlStr = "avatar_url"
         case htmlUrlStr = "html_url"
         case type
