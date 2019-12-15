@@ -7,5 +7,5 @@ target 'SearchGithubUserApp' do
 
   # Pods for SearchGithubUserApp
   pod 'Alamofire'
-
+  pod 'AlamofireImage'
 end
