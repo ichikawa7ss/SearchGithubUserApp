@@ -33,8 +33,7 @@ class SearchUserViewController: UIViewController {
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableView.estimatedRowHeight = 80
-        tableView.rowHeight = UITableView.automaticDimension
+        tableView.rowHeight = 80
         tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
     }
     
@@ -49,11 +48,6 @@ extension SearchUserViewController: UITableViewDelegate {
 extension SearchUserViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return presenter.numberOfUsers
-//        if let users = self.users {
-//            return users.count
-//        } else {
-//            return 10
-//        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -67,6 +61,7 @@ extension SearchUserViewController: UITableViewDataSource {
 
 extension SearchUserViewController: UISearchBarDelegate {
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
+        searchBar.resignFirstResponder()
         do {
             try presenter.didTapSearchButton(text: searchBar.text)
         } catch let error {
