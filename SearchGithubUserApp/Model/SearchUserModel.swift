@@ -11,7 +11,7 @@ import Foundation
 /// 画像情報検索モデルへの入力に関するプロトコル
 protocol SearchUserModelInput {
     func fetchUsers<Request: GithubRequest>
-        (request: Request,completion: @escaping (Result<Request.Response,Error>) -> ())
+        (request: Request,completion: @escaping (Result<Request.Response,SearchError>) -> ())
 }
 
 /// 画像情報検索用モデル
@@ -20,7 +20,7 @@ final class SearchUserModel : SearchUserModelInput {
     /// ユーザ情報の取得を行う
     /// - Parameter request: APIリクエスト
     /// - Parameter completion: 完了ハンドラ
-    func fetchUsers<Request>(request: Request, completion: @escaping (Result<Request.Response,Error>) -> ()) where Request : GithubRequest {
+    func fetchUsers<Request>(request: Request, completion: @escaping (Result<Request.Response,SearchError>) -> ()) where Request : GithubRequest {
         
         // APIクライアント
         let apiClient = GithubAPIClient()

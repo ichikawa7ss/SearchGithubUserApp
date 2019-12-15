@@ -24,6 +24,7 @@
 		CC74140523A6AF31005D540C /* SearchUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74140423A6AF31005D540C /* SearchUserPresenter.swift */; };
 		CC74140823A6B7F2005D540C /* SearchUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74140723A6B7F2005D540C /* SearchUserModel.swift */; };
 		CC74140A23A6BF32005D540C /* DetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74140923A6BF32005D540C /* DetailWebViewController.swift */; };
+		CC74141023A6D787005D540C /* Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74140F23A6D787005D540C /* Error.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		CC74140423A6AF31005D540C /* SearchUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserPresenter.swift; sourceTree = "<group>"; };
 		CC74140723A6B7F2005D540C /* SearchUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserModel.swift; sourceTree = "<group>"; };
 		CC74140923A6BF32005D540C /* DetailWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWebViewController.swift; sourceTree = "<group>"; };
+		CC74140F23A6D787005D540C /* Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Error.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 		CC7413EF23A6747B005D540C /* GithubAPI */ = {
 			isa = PBXGroup;
 			children = (
+				CC74140F23A6D787005D540C /* Error.swift */,
 				CC7413F823A68861005D540C /* Result.swift */,
 				CC7413F023A67492005D540C /* User.swift */,
 				CC7413F423A67D32005D540C /* SearchUserRequest.swift */,
@@ -288,6 +291,7 @@
 				CC7413F123A67492005D540C /* User.swift in Sources */,
 				CC7413FC23A691C6005D540C /* SearchUserViewController.swift in Sources */,
 				CC74140523A6AF31005D540C /* SearchUserPresenter.swift in Sources */,
+				CC74141023A6D787005D540C /* Error.swift in Sources */,
 				CC7413F723A68635005D540C /* GithubAPIClient.swift in Sources */,
 				CC74140123A69412005D540C /* UserTableViewCell.swift in Sources */,
 				CC74140823A6B7F2005D540C /* SearchUserModel.swift in Sources */,

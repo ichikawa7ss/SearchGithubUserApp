@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol GithubRequest {
+internal protocol GithubRequest {
     associatedtype Response : Codable
     
     var baseURL : URL { get }
