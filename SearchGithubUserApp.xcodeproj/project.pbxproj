@@ -24,6 +24,7 @@
 		CC74140223A69412005D540C /* UserTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = CC74140023A69412005D540C /* UserTableViewCell.xib */; };
 		CC74140523A6AF31005D540C /* SearchUserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74140423A6AF31005D540C /* SearchUserPresenter.swift */; };
 		CC74140823A6B7F2005D540C /* SearchUserModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74140723A6B7F2005D540C /* SearchUserModel.swift */; };
+		CC74140A23A6BF32005D540C /* DetailWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC74140923A6BF32005D540C /* DetailWebViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		CC74140023A69412005D540C /* UserTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserTableViewCell.xib; sourceTree = "<group>"; };
 		CC74140423A6AF31005D540C /* SearchUserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserPresenter.swift; sourceTree = "<group>"; };
 		CC74140723A6B7F2005D540C /* SearchUserModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserModel.swift; sourceTree = "<group>"; };
+		CC74140923A6BF32005D540C /* DetailWebViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailWebViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -133,6 +135,7 @@
 				CC7413FB23A691C6005D540C /* SearchUserViewController.swift */,
 				CC7413FF23A69412005D540C /* UserTableViewCell.swift */,
 				CC74140023A69412005D540C /* UserTableViewCell.xib */,
+				CC74140923A6BF32005D540C /* DetailWebViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -277,6 +280,7 @@
 				CC74140123A69412005D540C /* UserTableViewCell.swift in Sources */,
 				CC74140823A6B7F2005D540C /* SearchUserModel.swift in Sources */,
 				CC7413F523A67D32005D540C /* SearchUserRequest.swift in Sources */,
+				CC74140A23A6BF32005D540C /* DetailWebViewController.swift in Sources */,
 				CC7413DC23A671DB005D540C /* AppDelegate.swift in Sources */,
 				CC7413DE23A671DB005D540C /* SceneDelegate.swift in Sources */,
 				CC7413F923A68861005D540C /* Result.swift in Sources */,
