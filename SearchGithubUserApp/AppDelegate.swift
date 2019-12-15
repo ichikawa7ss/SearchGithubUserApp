@@ -19,6 +19,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let viewController = storyboard.instantiateInitialViewController() as! SearchUserViewController
         let navigationViewController = UINavigationController(rootViewController: viewController)
+        viewController.title = "Search User"
 
         viewController.inject(test: "テスト")
 

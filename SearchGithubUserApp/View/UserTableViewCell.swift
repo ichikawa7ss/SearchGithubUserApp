@@ -10,15 +10,20 @@ import UIKit
 
 class UserTableViewCell: UITableViewCell {
 
+    @IBOutlet weak var accountImageView: UIImageView!
+    @IBOutlet weak var userNameLabel: UILabel!
+    @IBOutlet weak var accontTypeLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
-    }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
+        
+        accountImageView.image = UIImage(systemName: "photo")
+        userNameLabel.text = "ichikawa7ss"
+        accontTypeLabel.text = "User"
     }
     
+    func configure(user: User) {
+        // TODO 画像・ラベルの設定
+    }
+
 }

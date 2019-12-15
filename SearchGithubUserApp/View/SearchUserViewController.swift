@@ -27,12 +27,10 @@ class SearchUserViewController: UIViewController {
     }
     
     private func setup() {
-        
-
         tableView.delegate = self
         tableView.dataSource = self
 
-        tableView.estimatedRowHeight = 64
+        tableView.estimatedRowHeight = 80
         tableView.rowHeight = UITableView.automaticDimension
         tableView.register(UINib(nibName: "UserTableViewCell", bundle: nil), forCellReuseIdentifier: "UserTableViewCell")
     }
