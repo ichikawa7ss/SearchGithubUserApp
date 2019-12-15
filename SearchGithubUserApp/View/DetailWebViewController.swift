@@ -7,14 +7,33 @@
 //
 
 import UIKit
+import WebKit
 
 class DetailWebViewController: UIViewController {
 
     public var url: URL?
+    var webView: WKWebView!
+    
+    override func loadView() {
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: .zero, configuration: webConfiguration)
+        webView.uiDelegate = self
+        view = webView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        print(url)
+        let myURL = url
+        let myRequest = URLRequest(url: myURL!)
+        webView.load(myRequest)
     }
+}
+
+extension DetailWebViewController: WKNavigationDelegate {
+    
+}
+
+extension DetailWebViewController: WKUIDelegate {
+    
 }
