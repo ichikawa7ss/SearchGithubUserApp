@@ -14,6 +14,8 @@
 		CC7413E523A671E0005D540C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = CC7413E423A671E0005D540C /* Assets.xcassets */; };
 		CC7413E823A671E0005D540C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CC7413E623A671E0005D540C /* LaunchScreen.storyboard */; };
 		CC7413F123A67492005D540C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413F023A67492005D540C /* User.swift */; };
+		CC7413F323A67B33005D540C /* GithubRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413F223A67B33005D540C /* GithubRequest.swift */; };
+		CC7413F523A67D32005D540C /* SearchUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413F423A67D32005D540C /* SearchUserRequest.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,8 @@
 		CC7413E723A671E0005D540C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		CC7413E923A671E0005D540C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		CC7413F023A67492005D540C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		CC7413F223A67B33005D540C /* GithubRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRequest.swift; sourceTree = "<group>"; };
+		CC7413F423A67D32005D540C /* SearchUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserRequest.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +78,8 @@
 			isa = PBXGroup;
 			children = (
 				CC7413F023A67492005D540C /* User.swift */,
+				CC7413F223A67B33005D540C /* GithubRequest.swift */,
+				CC7413F423A67D32005D540C /* SearchUserRequest.swift */,
 			);
 			path = GithubAPI;
 			sourceTree = "<group>";
@@ -151,8 +157,10 @@
 			files = (
 				CC7413F123A67492005D540C /* User.swift in Sources */,
 				CC7413E023A671DB005D540C /* ViewController.swift in Sources */,
+				CC7413F523A67D32005D540C /* SearchUserRequest.swift in Sources */,
 				CC7413DC23A671DB005D540C /* AppDelegate.swift in Sources */,
 				CC7413DE23A671DB005D540C /* SceneDelegate.swift in Sources */,
+				CC7413F323A67B33005D540C /* GithubRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
