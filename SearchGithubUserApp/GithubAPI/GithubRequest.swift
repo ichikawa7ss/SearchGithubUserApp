@@ -33,4 +33,12 @@ extension GithubRequest {
         components.queryItems = queryItems
         return components.url!
     }
+    
+    // レスポンスで取得したデータからレスポンス型で取り出す
+    // デコードでエラーが発生した場合はthrowする
+    func response (from data: Data) throws -> Response {
+        let decoder = JSONDecoder()
+        // アプリで扱えるようにデコードして、結果を返す
+        return try decoder.decode(Response.self, from: data)
+    }
 }
