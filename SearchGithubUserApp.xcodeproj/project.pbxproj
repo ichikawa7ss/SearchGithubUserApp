@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -17,6 +17,8 @@
 		CC7413F123A67492005D540C /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413F023A67492005D540C /* User.swift */; };
 		CC7413F323A67B33005D540C /* GithubRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413F223A67B33005D540C /* GithubRequest.swift */; };
 		CC7413F523A67D32005D540C /* SearchUserRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413F423A67D32005D540C /* SearchUserRequest.swift */; };
+		CC7413F723A68635005D540C /* GithubAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413F623A68635005D540C /* GithubAPIClient.swift */; };
+		CC7413F923A68861005D540C /* Result.swift in Sources */ = {isa = PBXBuildFile; fileRef = CC7413F823A68861005D540C /* Result.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		CC7413F023A67492005D540C /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		CC7413F223A67B33005D540C /* GithubRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubRequest.swift; sourceTree = "<group>"; };
 		CC7413F423A67D32005D540C /* SearchUserRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchUserRequest.swift; sourceTree = "<group>"; };
+		CC7413F623A68635005D540C /* GithubAPIClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GithubAPIClient.swift; sourceTree = "<group>"; };
+		CC7413F823A68861005D540C /* Result.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Result.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -62,7 +66,6 @@
 				B5124B73A99B6D99AC2BB018 /* Pods-SearchGithubUserApp.debug.xcconfig */,
 				598A4FBF4AC3603A81236F2D /* Pods-SearchGithubUserApp.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -105,6 +108,8 @@
 				CC7413F023A67492005D540C /* User.swift */,
 				CC7413F223A67B33005D540C /* GithubRequest.swift */,
 				CC7413F423A67D32005D540C /* SearchUserRequest.swift */,
+				CC7413F623A68635005D540C /* GithubAPIClient.swift */,
+				CC7413F823A68861005D540C /* Result.swift */,
 			);
 			path = GithubAPI;
 			sourceTree = "<group>";
@@ -225,10 +230,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				CC7413F123A67492005D540C /* User.swift in Sources */,
+				CC7413F723A68635005D540C /* GithubAPIClient.swift in Sources */,
 				CC7413E023A671DB005D540C /* ViewController.swift in Sources */,
 				CC7413F523A67D32005D540C /* SearchUserRequest.swift in Sources */,
 				CC7413DC23A671DB005D540C /* AppDelegate.swift in Sources */,
 				CC7413DE23A671DB005D540C /* SceneDelegate.swift in Sources */,
+				CC7413F923A68861005D540C /* Result.swift in Sources */,
 				CC7413F323A67B33005D540C /* GithubRequest.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

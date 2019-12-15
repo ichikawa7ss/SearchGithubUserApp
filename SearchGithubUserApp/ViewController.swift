@@ -13,8 +13,13 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        let apiClient = GithubAPIClient()
         let request = SearchUserRequest(keyword: "ichikawa")
         print(request.buildUrl())
+
+        apiClient.send(request: request) { (result) in
+            print("完了ハンドラ")
+        }
     }
 
 
