@@ -4,7 +4,9 @@
 - Githubのユーザを検索し、ユーザ名・登録アバターならびにアカウントタイプの一覧を出力する
 - 一覧画面からユーザを選択するとユーザ管理画面をwebViewで表示する。また、ナビゲーションの戻るボタンを押下して、ユーザ検索/結果画面へ戻る
 
-#　アプリ詳細
+![searchGithubSample](https://user-images.githubusercontent.com/42941654/70872589-a4738b00-1fec-11ea-94ea-ce1ed06afeb3.gif)
+
+# アプリ詳細
 
 ## 前提条件
 - OS:iOS11以上対応
@@ -26,7 +28,10 @@
 ### CocoaPods
 
 CocoaPodsによってAlamofire/AlamofireImageのインストールを実施しています。
+
 インストールしたライブラリはGit上でクローン時の負荷を最小限とするため、ライブラリごと（Podsディレクトリ直下）Git管理しています。
+
+直接Githubからクローンいただければ、すぐにビルド・利用が可能かと存じます。
 
 ## 設計概要
 
